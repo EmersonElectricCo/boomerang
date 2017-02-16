@@ -1,0 +1,9 @@
+#### requirements.txt ####
+#
+#### Requirements for boomerang ####
+flask
+pyminizip
+Ghost.py
+requests
+verbalexpressions
+#
