@@ -18,7 +18,7 @@ __How does it work?__
 
 Boomerang operates in a client-minion model like the one shown below. 
 
-![alt text](https://github.com/compsecmonkey/boomerang/raw/master/flow.png "Boomerang Flow")
+![alt text](https://github.com/EmersonElectricCo/boomerang/raw/master/flow.png "Boomerang Flow")
 
 
 
