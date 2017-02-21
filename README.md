@@ -57,6 +57,7 @@ The minion has been successfully installed and tested on Ubuntu Server 14.04 and
 
 ```bash
 cd minion
+sudo apt-get install -y libz-dev
 sudo pip install -r requirements.txt
 sudo apt-get install -y python-pyside xvfb
 ```
