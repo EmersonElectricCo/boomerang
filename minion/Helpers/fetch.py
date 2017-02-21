@@ -53,7 +53,7 @@ def fetch_basic(url, user_agent, results_location, job_id=None):
         return results_data
 
     except Exception as e:
-        log_debug("fetch_basic", "Unexpected Exception while fetching site. " + str(type(e)) + " : " + str(e)
+        log_debug("fetch_basic", "Unexpected Exception while fetching site. " + str(type(e)) + " : " + str(e))
         return results_data
 
     try:
@@ -85,7 +85,7 @@ def fetch_basic(url, user_agent, results_location, job_id=None):
             results_data['fetch_object_success'] = False
 
     except Exception as e:
-        log_debug("fetch_basic", "Unexpected Exception while handlin fetch data. " + str(type(e)) + " : " + str(e)
+        log_debug("fetch_basic", "Unexpected Exception while handlin fetch data. " + str(type(e)) + " : " + str(e))
         results_data['fetch_success'] = False
 
     finally:
