@@ -36,7 +36,7 @@ def make_json_app(import_name, **kwargs):
     app = Flask(import_name, **kwargs)
 
     for code in default_exceptions.iterkeys():
-        app.error_handler_spec[None][code] = make_json_error
+        app.register_error_handler(code, make_json_error)
 
     return app
 
@@ -64,7 +64,7 @@ if not os.path.isdir(minion.config['BOOMERANG_FETCH_DIR']):
     minion.logger.info("\"Boomerang Directory Does not Exist... Creating...\"")
     os.makedirs(minion.config['BOOMERANG_FETCH_DIR'])
 
-	
+
 '''
 Minion Routes
 '''
@@ -74,7 +74,7 @@ def index():
     """Establishes minion root "GET" Endpoint
 
     Serves no actual puprose for the operation of the minion
-	useful for smoke testing the minion after installation. 
+	useful for smoke testing the minion after installation.
     """
     data = {"hello": "This Is Dog"}
     return prepare_200("Hello This Is Dog", data)
@@ -83,14 +83,14 @@ def index():
 @minion.route('/', methods=["POST"])
 def api_request_basic():
     """Establishes the endpoint that is used for the basic fetch mode
-	
+
 	POST body should be json formated.
 	Required field(s):
 	  - url : actual url that is requested to be fetched by the minion
-	  
+
 	Optional field(s):
-	  - user-agent : user agent to be used during the request of the url 
-	                 if this argument is not provided, then the default 
+	  - user-agent : user agent to be used during the request of the url
+	                 if this argument is not provided, then the default
 					 user agent in the config file will be used.
 
     """
@@ -114,14 +114,14 @@ def api_request_basic():
 @minion.route("/website", methods=["POST"])
 def api_request_website():
     """Establishes the endpoint that is used for the website fetch mode
-	
+
 	POST body should be json formated.
 	Required field(s):
 	  - url : actual url that is requested to be fetched by the minion
-	  
+
 	Optional field(s):
-	  - user-agent : user agent to be used during the request of the url 
-	                 if this argument is not provided, then the default 
+	  - user-agent : user agent to be used during the request of the url
+	                 if this argument is not provided, then the default
 					 user agent in the config file will be used.
 
 
