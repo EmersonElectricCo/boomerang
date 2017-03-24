@@ -99,7 +99,7 @@ __Example__
 curl -H "Content-Type: application/json" -X POST -d '{"url":"http://google.com","user-agent":"Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko"}' http://<minion domain or ip>:<port>/
 ```
 
-###Website Mode
+### Website Mode
 
 In website mode, the minion is used to fetch the full contents of a single webpage including it's images, scripts, etc. In addition the minion will use the data collected to render a screenshot of what the page looks like. Upon a succesful fetch, a zip file is returned to the analyst which contains the following:
 
